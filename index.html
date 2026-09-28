@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cek stiker sesuai kepribadian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="warning-overlay" id="warningOverlay">
+        <div class="warning-box">
+            <h3>⚠️ Data Belum Lengkap</h3>
+            <p> Masukkan nama dan umur terlebih dahulu!</p>
+            <button class="warning-ok" 
+                onclick="tutupWarning()"><span>OK</span>
+                <span class="arrow">→</span></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>CEK STIKER SESUAI KEPRIBADIAN</h1>
+        <p class="subtitle">Masukan Data Kamu Untuk Mengetahui Stiker Yang Cocok</p>
+
+        <div class="form-box">
+            <input type="text" id="nama" placeholder="Masukkan Nama">
+            <input type="number" id="umur" placeholder="Masukan Umur">
+
+            <button onclick="cekMember()">CEK STIKER</button>
+        </div>
+    </div>
+
+    <!-- loading boongan -->
+    <div class="loading-overlay" id="loading">
+        <div class="loading-box">
+            <div class="loader"></div>
+            <h2>Menganalisis...(Loading Boongan Jir)</h2>
+            <p id="loading-text">Mencari Member Yang Cocok...</p>
+        </div>
+    </div>
+
+    <!-- pop up result -->
+    <div class="result-overlay" id="resultOverlay">
+        <div class="result-card">
+            <button class="close-btn" onclick="tutupHasil()">X</button>
+            <p class="result-label">HASIL STIKER YANG COCOK</p>
+            <p id="ucapanMember"></p>
+            <h2 id="namaMember">MAS AMBA</h2>
+            <div class="media-box"
+            id="mediaBox"></div>
+            <p id="deskripsiMember">Kamu Mirip Dengan MAS AMBA</p>
+            <button class="again-btn" onclick="cekLagi()">Cek Lagi</button>
+            </div>
+        </div>
+    </div>
+    <!-- cek stiker -->
+    <!-- <button onclick="previewSemua()">CEK SEMUA FILE</button>
+    <div id="previewSemua"></div> -->
+    <script src="script.js"></script>
+</body>
+</html>

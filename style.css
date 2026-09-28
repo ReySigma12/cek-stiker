@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #111, #292929);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* LOADING */
+.loading-overlay,
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.loading-box {
+    text-align: center;
+}
+
+.loader {
+    width: 55px;
+    height: 55px;
+    border: 5px solid #555;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto auto 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*  RESULT */
+.result-card {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    background: #181818;
+    border-radius: 22px;
+    padding: 25px;
+    text-align: center;
+    animation: popup 0.45s ease forwards;
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    color: white;
+    font-size: 30px;
+}
+
+.result-label {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+#namaKodam {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.media-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #333;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#deskripsi {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.again-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.again-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.warning-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.warning-box {
+    width: 85%;
+    max-width: 350px;
+    background: #181818;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    animation: warningPopup 0.4s       
+    cubic-bezier(.17, .67, .35, 1.3);
+}
+
+.warning-box h3 {
+    margin-bottom: 10px;
+}
+
+.warning-box p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.warning.ok {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    color: #111;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.warning-ok .arrow {
+    font-size: 20px;
+    transition: 0.25s ease;
+}
+
+.warning-ok:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(225, 225, 225, 0.2);
+}
+
+.warning-ok:hover .arrow {
+    transform: translateX(5px);
+}
+
+.warning-ok:active {
+    transform: scale(0.94);
+}
+
+@keyframes warningPopup {
+    from {
+        opacity: 0;
+        transform: scale(0.5);  
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes buttonMasuk {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.warning-box.closing {
+    animation: warningClose 0.4s ease forwards;
+}
+
+@keyframes warningClose {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
