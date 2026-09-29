@@ -329,7 +329,7 @@ const member = [
     deskripsi: "kamu adalah seorang dengan sifat sabar yang tinggi",
     },
     {
-    nama: "MAIN LAGAL LAGA",
+    nama: "MAIN LAGA LAGA",
     tipe: "foto",
     media: "Stiker-Jomok/seronoknya_main_laga-laga.jpg",
     ucapan: "stiker kamu adalah...",
